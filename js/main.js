@@ -35,15 +35,27 @@ function mainMenu() {
 // MENU SELECTION FUNCTIONS
 // ******************************************************
 function deposit() {
+  +prompt("Type an index");
+  +prompt("How much do you want to withdraw?");
+  let deposit = [];
+  for (let i = 0; i < 50; i++) {
+    deposit[i]++;
+    outputEl.innerHTML = "Deposit confirmed";
+  }
   // Prompt the user for the index of an account and the amount to deposit into that account.
   // Modify the data array to reflect the deposit.
   // Adjust the maxVal variable if necessary.
   // Use the outputEl to provide a confirmation message.
-
-  outputEl.innerHTML = "Deposit";
 }
 
 function withdrawal() {
+  let index = +prompt("Type an index");
+  let amount = +prompt("How much do you want to withdraw?");
+  let dataArray = [];
+  for (let i = 0; i < dataArray.length; i++) {
+    dataArray[i]++;
+  }
+
   // Prompt the user for the index of an account and the amount to withdraw from that account.
   // Modify the data array to reflect the withdrawal.
   // Check to assure that the account has enough funds.
@@ -53,9 +65,6 @@ function withdrawal() {
 }
 
 function countUnder2000() {
-  // Count the number of accounts that are less than 2000
-  // Use the outputEl to display the results of the count.
-
   outputEl.innerHTML = "Count Under $2000";
 }
 
