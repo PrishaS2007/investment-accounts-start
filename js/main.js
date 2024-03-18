@@ -35,8 +35,8 @@ function mainMenu() {
 // MENU SELECTION FUNCTIONS
 // ******************************************************
 function deposit() {
-  +prompt("Type an index");
-  +prompt("How much do you want to withdraw?");
+  +prompt("Which index?");
+  +prompt("How much do you want to deposit?");
   let deposit = [];
   for (let i = 0; i < 50; i++) {
     deposit[i]++;
