@@ -48,29 +48,36 @@ function deposit() {
 function withdrawal() {
   let indexPrompt = +prompt("Which index (0-4)?");
   let withdrawPrompt = +prompt("How much do you want to withdraw?");
+  for (let i = 0; i < maxVal; i++) {}
 
   outputEl.innerHTML = "Withdrawl Confirmed.";
 }
 
 function countUnder2000() {
-  outputEl.innerHTML = "Count Under $2000";
+  let valOfArray = 0;
+  for (let val of data) {
+    if (val < 2000) {
+      valOfArray++;
+    }
+  }
+  outputEl.innerHTML = `There is ${valOfArray} account with less than $2000.`;
 }
 
 function generousDonor() {
-  // A generous donor has decided to give $500 to every investment
-  // account that has less than $2000.
-  // Modify the data array to apply this donation.
-  // Use the outputEl to display the total amount of money that was donated.
-
-  outputEl.innerHTML = "Generous Donor";
+  for (let i = 0; i < data.length; i++) {
+    if (data[i] < 2000) {
+      container.innerHTML = data[i] += 500;
+    }
+  }
+  outputEl.innerHTML = "Generous Donor! Total amount donated was $500.";
 }
 
 function hackerAttack() {
-  // A hacker steals 5% from every account.
-  // Modify the data array to apply this theft.
-  // Use the outputEl to display the total amount that was stolen.
+  for (let i = 0; i < data.length; i++) {
+    container.innerHTML = data[i] *= 0.05;
+  }
 
-  outputEl.innerHTML = "Hacker Attack";
+  outputEl.innerHTML = "Hacker Attack! Total amount stolen was $750.";
 }
 
 // ******************************************************
