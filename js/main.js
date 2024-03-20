@@ -37,19 +37,23 @@ function mainMenu() {
 function deposit() {
   let indexPrompt = +prompt("Which index (0-4)?");
   let depositPrompt = +prompt("How much do you want to deposit?");
-  for (let i = 0; i < maxVal; i++) {
-    if (data[i].length === indexPrompt) {
-      container.innerHTML = drawDataArray(depositPrompt);
-    }
+  data[indexPrompt] = data[indexPrompt] + depositPrompt;
+  if (data[indexPrompt] > maxVal) {
+    maxVal = data[indexPrompt];
   }
+  console.log(data);
   outputEl.innerHTML = "Deposit confirmed";
 }
 
 function withdrawal() {
   let indexPrompt = +prompt("Which index (0-4)?");
   let withdrawPrompt = +prompt("How much do you want to withdraw?");
-  for (let i = 0; i < maxVal; i++) {}
-
+ if (data[indexPrompt] - withdrawPrompt >= 0) {
+  data[indexPrompt] = data[indexPrompt] - withdrawPrompt
+ } else {
+  alert("Please enter a lower amount!!");
+ }
+  console.log(data);
   outputEl.innerHTML = "Withdrawl Confirmed.";
 }
 
@@ -64,20 +68,25 @@ function countUnder2000() {
 }
 
 function generousDonor() {
+  let donatedAmount = 0;
   for (let i = 0; i < data.length; i++) {
     if (data[i] < 2000) {
-      container.innerHTML = data[i] += 500;
+      data[i] += 500;
+      donatedAmount += 500;
     }
   }
-  outputEl.innerHTML = "Generous Donor! Total amount donated was $500.";
+  console.log(data);
+  outputEl.innerHTML = `Generous Donor! Total amount donated was $${donatedAmount}`;
 }
 
 function hackerAttack() {
+  let amountStolen = 0;
   for (let i = 0; i < data.length; i++) {
-    container.innerHTML = data[i] *= 0.05;
+   amountStolen += data[i] * 0.05
+   data[i] = data[i] - data[i] * 0.05;
   }
-
-  outputEl.innerHTML = "Hacker Attack! Total amount stolen was $750.";
+  console.log(data);
+  outputEl.innerHTML = `Hacker Attack! Total amount stolen was $${amountStolen}`;
 }
 
 // ******************************************************
