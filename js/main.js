@@ -51,7 +51,7 @@ function withdrawal() {
   if (data[indexPrompt] - withdrawPrompt >= 0) {
     data[indexPrompt] = data[indexPrompt] - withdrawPrompt;
   } else {
-    alert("Please enter a lower amount!!");
+    alert("Insufficient Balance.");
   }
   outputEl.innerHTML = "Withdrawl Confirmed.";
 }
