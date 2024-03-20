@@ -35,7 +35,7 @@ function mainMenu() {
 // MENU SELECTION FUNCTIONS
 // ******************************************************
 function deposit() {
-  let indexPrompt = +prompt("Which index (0-4)?");
+  let indexPrompt = +prompt("Which account would you like to access (0-4)?");
   let depositPrompt = +prompt("How much do you want to deposit?");
   data[indexPrompt] = data[indexPrompt] + depositPrompt;
   if (data[indexPrompt] > maxVal) {
@@ -46,13 +46,13 @@ function deposit() {
 }
 
 function withdrawal() {
-  let indexPrompt = +prompt("Which index (0-4)?");
+  let indexPrompt = +prompt("Which account would you like to access (0-4)?");
   let withdrawPrompt = +prompt("How much do you want to withdraw?");
- if (data[indexPrompt] - withdrawPrompt >= 0) {
-  data[indexPrompt] = data[indexPrompt] - withdrawPrompt
- } else {
-  alert("Please enter a lower amount!!");
- }
+  if (data[indexPrompt] - withdrawPrompt >= 0) {
+    data[indexPrompt] = data[indexPrompt] - withdrawPrompt;
+  } else {
+    alert("Please enter a lower amount!!");
+  }
   console.log(data);
   outputEl.innerHTML = "Withdrawl Confirmed.";
 }
@@ -82,8 +82,8 @@ function generousDonor() {
 function hackerAttack() {
   let amountStolen = 0;
   for (let i = 0; i < data.length; i++) {
-   amountStolen += data[i] * 0.05
-   data[i] = data[i] - data[i] * 0.05;
+    amountStolen += data[i] * 0.05;
+    data[i] = data[i] - data[i] * 0.05;
   }
   console.log(data);
   outputEl.innerHTML = `Hacker Attack! Total amount stolen was $${amountStolen}`;
