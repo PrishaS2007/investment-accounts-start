@@ -53,7 +53,6 @@ function withdrawal() {
   } else {
     alert("Please enter a lower amount!!");
   }
-  console.log(data);
   outputEl.innerHTML = "Withdrawl Confirmed.";
 }
 
@@ -75,7 +74,6 @@ function generousDonor() {
       donatedAmount += 500;
     }
   }
-  console.log(data);
   outputEl.innerHTML = `Generous Donor! Total amount donated was $${donatedAmount}`;
 }
 
@@ -85,7 +83,6 @@ function hackerAttack() {
     amountStolen += data[i] * 0.05;
     data[i] = data[i] - data[i] * 0.05;
   }
-  console.log(data);
   outputEl.innerHTML = `Hacker Attack! Total amount stolen was $${amountStolen}`;
 }
 
